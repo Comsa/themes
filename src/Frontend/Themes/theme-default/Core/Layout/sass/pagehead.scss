@@ -1,0 +1,175 @@
+@import "mixins";
+
+/***  PAGEHEAD ***/
+div.pagehead
+{
+}
+
+/*** LOGO ***/
+
+a.logo
+{
+  display: block;
+  overflow: hidden;
+  img
+  {
+    display: block;
+  }
+}
+
+/*** END LOGO ***/
+
+/*** NAV-TOP NAV-LANG ***/
+ul.nav-top, ul.nav-lang
+{
+  @include nav-layout-horizontal(0);
+  @include font-custom-light();
+  @include nav-inline();
+  clear: both;
+  display: block;
+  font-size: ceil($font-size-base * 0.9);
+  margin: 0;
+  padding: 3px 0;
+  li
+  {
+    a
+    {
+      color: lighten($gray-dark, 10%);
+      display: block;
+    }
+  }
+
+  li:hover, li.selected
+  {
+    a
+    {
+      color: $text-color;
+      text-decoration: none;
+      span
+      {
+        text-decoration: underline;
+      }
+    }
+    a:after
+    {
+      text-decoration: none;
+    }
+  }
+}
+
+/*** END NAV-TOP NAV-LANG ***/
+
+/*** NAV-MAIN ***/
+
+ul.nav-main
+{
+  @include nav-layout-horizontal(30px);
+  @include nav-submenu();
+  @include font-custom-bold();
+  height: auto;
+  margin-top: 15px;
+  overflow: hidden;
+
+  li
+  {
+    a
+    {
+      font-size: ceil($font-size-base*1.2);
+      text-decoration: none;
+    }
+
+    ul
+    {
+      background-color: $brand-primary; //rgba($brand-primary, 0.8);
+      li
+      {
+        a
+        {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/*** END NAV-MAIN ***/
+/*** FACEBOOK ***/
+
+a.facebook
+{
+  margin-top: 10px;
+}
+
+/*** END FACEBOOK ***/
+
+/***  END PAGEHEAD ***/
+/***  BREADCRUMB ***/
+
+ol.breadcrumb
+{
+  margin-top: 10px;
+  li
+  {
+    font-size: 14px;
+    color: $gray;
+    a
+    {
+      color: $gray-dark;
+      text-decoration: underline;
+      &:before
+      {
+        height: 0 !important;
+      }
+      &:after
+      {
+        height: 0 !important;
+      }
+    }
+  }
+}
+
+/***  END BREADCRUMB ***/
+
+/*** NAVBAR FIXED***/
+
+div.nav-fixed-top
+{
+  @include box-shadow(0px 1px 5px 0px darken($brand-primary, 20%));
+  background-color: #FFFFFF;
+  border-bottom: 1px solid $brand-primary;
+  display: none;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  a.logo
+  {
+    margin-top: 5px;
+  }
+
+  ul.nav-main
+  {
+    margin: 20px 0 0;
+  }
+}
+
+/*** END NAVBAR FIXED***/
+
+/*** RESPONSIVE MENU ***/
+a.responsive-menu
+{
+  @include font-custom();
+  background-color: $brand-primary;
+  color: #FFFFFF;
+  display: block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: ceil($font-size-base * 1.6);
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: right;
+  width: 100%;
+}
+
+/*** END RESPONSIVE MENU ***/

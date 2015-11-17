@@ -1,0 +1,25 @@
+@import "mixins";
+
+/*** MEDIA ***/
+
+ul.media
+{
+  li
+  {
+    overflow: hidden;
+    margin-bottom: 10px;
+    a
+    {
+//      border: 1px solid $brand-primary;
+      display: block;
+
+      img
+      {
+      }
+
+    }
+  }
+
+}
+
+/*** END MEDIA ***/

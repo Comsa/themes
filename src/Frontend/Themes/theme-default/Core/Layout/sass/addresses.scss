@@ -1,0 +1,36 @@
+@import "mixins";
+
+/*** ADDRESSES ***/
+ul.addresses-list
+{
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+div.addresses-detail
+{
+  div.google-maps-detail
+  {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+div.dealers
+{
+  form
+  {
+    margin-top: 10px;
+
+    input.btn
+    {
+      background-color: #E6E6E6;
+      border: 0;
+      color: $text-color;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+  }
+}
+
+/*** END ADDRESSES ***/

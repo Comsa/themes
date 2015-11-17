@@ -1,0 +1,104 @@
+@import "mixins";
+
+#body
+{
+  border-top: 5px solid $brand-primary;
+  background-color: $body-bg;
+  padding-top: 15px;
+  min-height: 100%;
+}
+
+html, body {
+  height: 100% !important;
+}
+
+div.content-main
+{
+  a
+  {
+    @include underline-animation($brand-primary);
+    &:hover
+    {
+      text-decoration: none;
+    }
+  }
+  a.btn
+  {
+    @include disable-underline-animation();
+  }
+  strong
+  {
+    color: $brand-primary;
+  }
+  ul
+  {
+    @include list-style-marker();
+  }
+
+  img
+  {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  ul.pagination
+  {
+    @include disable-list-style-marker();
+    a
+    {
+      @include disable-underline-animation();
+    }
+
+  }
+}
+
+div.content
+{
+  img
+  {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+h1, h2
+{
+  color: $brand-primary;
+  @include font-custom;
+  small
+  {
+    color: $brand-secondary;
+  }
+}
+
+/*
+
+#cookieBar
+{
+  background-color: $brand-primary;
+  border-bottom: 1px solid $gray-light;
+  color: #FFFFFF;
+  font-size: 13px;
+  padding: 8px 5px 5px;
+  width: 100%;
+  margin: 0;
+  margin-top: -30px;
+//  position: absolute;
+//  bottom: 0;
+//  z-index: $zindex-modal;
+  a
+  {
+    color: #FFFFFF;
+    text-decoration: underline;
+  }
+  a.btn
+  {
+    color: #FFFFFF;
+  }
+
+  /*#cookieBarAgree
+  {
+    text-decoration: underline;
+    font-weight: bold;
+  }*//*
+}
+*/

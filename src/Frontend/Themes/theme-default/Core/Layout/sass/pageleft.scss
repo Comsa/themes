@@ -1,0 +1,35 @@
+@import "mixins";
+
+/***  NAV-LEFT ***/
+ul.nav-sub
+{
+  margin: 20px 0 0 !important;
+  li
+  {
+    display: inline-block;
+    background-color: $brand-primary;
+    margin: 0 5px 0 0 !important;
+    a
+    {
+      color: lighten($brand-primary, 50%);
+      padding: 5px 10px;
+      display: block;
+      font-size: $font-size-base;
+      text-decoration: none;
+    }
+    &:before 
+    {
+      content:'' !important;
+    }
+    &:hover, &.selected
+    {
+      background-color: darken($brand-primary, 10%);
+      a
+      {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/*** END NAV-LEFT ***/

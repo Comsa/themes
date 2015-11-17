@@ -1,0 +1,33 @@
+@import "mixins";
+
+
+
+/*** HOMEPAGE ***/
+div.homepage-footer
+{
+  p
+  {
+    line-height: 16px;
+  }
+  img
+  {
+    margin-right: 20px;
+  }
+  ul
+  {
+    li
+    {
+      list-style-position: inside;
+    }
+  }
+}
+
+div.well
+{
+  a.btn
+  {
+    text-decoration: none;
+  }
+}
+
+/*** END HOMEPAGE***/

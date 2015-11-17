@@ -1,0 +1,62 @@
+@import "mixins";
+
+//Phone
+@media (max-width: $screen-xs-max) {
+}
+
+//small tablets
+@media (min-width: $screen-sm) {
+  ul.nav-top
+  {
+    margin-right: 30px;
+    clear: none;
+  }
+
+  ul.nav-sub
+  {
+    li
+    {
+      @include transition(all 0.2s);
+      background-color: transparent;
+      border-bottom: 1px dotted $brand-primary;
+      display: block;
+      margin: 5px 0;
+      padding: 5px 0 5px 10px;
+      a
+      {
+        color: $brand-primary;
+        font-size: ceil($font-size-base*1.2);
+        padding: 0;
+      }
+      &:hover, &.selected
+      {
+        @include transition(all 0.3s);
+        background-color: $brand-primary;
+
+        a
+        {
+          color: #FFFFFF;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  div.pagefoot
+  {
+    text-align: left;
+  }
+}
+
+//tablets + small desktop
+@media (min-width: $screen-md) {
+
+  ul.nav-main
+  {
+    @include nav-layout-horizontal(40px);
+  }
+}
+
+//Large desktop
+@media (min-width: $screen-lg) {
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+	<name>theme-default</name>
+	<version>1.0.0</version>
+	<requirements>
+		<minimum_version>3.9.5</minimum_version>
+	</requirements>
+	<thumbnail>thumbnail.png</thumbnail>
+	<description>
+		<![CDATA[
+			Theme gemaakt door Comsa!
+		]]>
+	</description>
+	<authors>
+		<author>
+			<name>Waldo Cosman</name>
+			<url>http://www.comsa.be</url>
+		</author>
+	</authors>
+	<metanavigation supported="true" />
+    <templates>
+        <template label="2Column" path="Core/Layout/Templates/2Column.tpl">
+            <positions>
+                <position name="Top"/>
+                <position name="Left"/>
+                <position name="Right"/>
+                <position name="Footer"/>
+            </positions>
+            <format>[Top,Top],[Left,Right],[Footer,Footer]</format>
+        </template>
+        <template label="Full" path="Core/Layout/Templates/Full.tpl">
+            <positions>
+                <position name="Main"/>
+            </positions>
+            <format>[Main]</format>
+        </template>
+        <template label="Home" path="Core/Layout/Templates/Home.tpl">
+            <positions>
+                <position name="Top"/>
+                <position name="TopLeft"/>
+                <position name="TopRight"/>
+                <position name="Middle"/>
+                <position name="MiddleLeft"/>
+                <position name="MiddleMiddle"/>
+                <position name="MiddleRight"/>
+                <position name="Footer"/>
+            </positions>
+            <format>[Top,Top,Top,Top,Top,Top],[TopLeft,TopLeft,TopLeft,TopRight,TopRight,TopRight],[Middle,Middle,Middle,Middle,Middle,Middle],[MiddleLeft,MiddleLeft,MiddleMiddle,MiddleMiddle,MiddleRight,MiddleRight],[Footer,Footer,Footer,Footer,Footer,Footer]</format>
+        </template>
+        <template label="Left" path="Core/Layout/Templates/Left.tpl">
+            <positions>
+                <position name="Top"/>
+                <position name="Left"/>
+                <position name="Main"/>
+                <position name="Footer"/>
+            </positions>
+            <format>[Top,Top,Top],[Left,Main,Main],[Footer,Footer,Footer]</format>
+        </template>
+        <template label="Right" path="Core/Layout/Templates/Right.tpl">
+            <positions>
+                <position name="Main"/>
+                <position name="Top"/>
+                <position name="Right"/>
+                <position name="Footer"/>
+            </positions>
+            <format>[Top,Top,Top],[Main,Main,Right],[Footer,Footer,Footer]</format>
+        </template>
+        <template label="Submenu" path="Core/Layout/Templates/Submenu.tpl">
+            <positions>
+                <position name="Top"/>
+                <position name="Main"/>
+                <position name="Left"/>
+                <position name="Footer"/>
+            </positions>
+            <format>[Top,Top,Top],[/,Main,Main],[Left,Main,Main],[Footer,Footer,Footer]</format>
+        </template>
+    </templates>
+</theme>

@@ -1,0 +1,227 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "variables";
+
+/** Float all the elements for the horizontal main navigation**/
+@mixin nav-layout-horizontal($marginRight) {
+  li
+  {
+    display: block;
+    float: left;
+    margin-right: $marginRight;
+
+    a
+    {
+      @include transition(color 0.3s);
+    }
+
+    &:last-child
+    {
+      margin-right: 0;
+    }
+    &:hover, li.selected
+    {
+      a
+      {
+        @include transition(color 0.3s);
+      }
+    }
+  }
+}
+
+/** Inline navigation, seperated with character **/
+@mixin nav-inline($padding: 10px) {
+  overflow: hidden;
+  li
+  {
+    display: inline-block;
+
+    a:after
+    {
+      content: '\002F';
+      padding: 0 $padding;
+      text-decoration: none;
+    }
+    &:last-child
+    {
+      a:after
+      {
+        border-bottom: 0;
+        content: '';
+        color: lighten($gray-dark, 10%);
+        padding: 0;
+      }
+    }
+  }
+
+}
+
+/** Custom fonts**/
+@mixin font-custom() {
+  font-family: $font-custom;
+}
+
+@mixin font-custom-bold() {
+  font-family: $font-custom;
+  font-weight: 500;
+}
+
+@mixin font-custom-light() {
+  font-family: $font-custom;
+  font-weight: 300;
+}
+
+@mixin font-custom-text() {
+  font-family: $font-custom-text;
+  font-weight: 400;
+}
+
+@mixin font-custom-handwriting() {
+  font-family: $font-custom-handwriting;
+  font-weight: 400;
+}
+
+/** Use specific list style type from a font**/
+@mixin list-style-marker($icon: '\f00c') {
+  padding: 0;
+  list-style: none;
+  margin-left: 20px;
+  li
+  {
+    margin-left: 20px;
+    &:before
+    {
+      color: $brand-primary;
+      font-family: 'FontAwesome';
+      content: $icon;
+      padding-right: 5px;
+      position: absolute;
+      margin-left: -25px;
+    }
+  }
+}
+
+/** Include subnavigation (on hover) **/
+@mixin nav-submenu() {
+  li
+  {
+    ul
+    {
+      display: none;
+      height: auto;
+      margin: 0 0 0 -20px;
+      overflow: hidden;
+      padding: 0 0 10px 0;
+      position: absolute;
+      width: auto;
+      z-index: 100000;
+      li
+      {
+        background-color: transparent;
+        color: #FFFFFF;
+        float: none;
+        margin: 0;
+        padding: 5px 20px 0;
+        a
+        {
+          border-bottom: 0;
+          color: #FFFFFF;
+          font-size: 16px;
+        }
+      }
+
+      li:hover
+      {
+        a
+        {
+          text-decoration: underline !important;
+        }
+      }
+    }
+
+    &.selected, &:hover
+    {
+      a
+      {
+        text-decoration: underline;
+      }
+
+      ul li a
+      {
+        text-decoration: none;
+      }
+    }
+
+    &:hover
+    {
+      ul
+      {
+        display: block;
+      }
+    }
+  }
+}
+
+@mixin underline-animation($color) {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 1px;
+  text-decoration: none;
+  &:before
+  {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    transition: width 0s ease;
+  }
+  &:after
+  {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: $color;
+    transition: width .3s ease;
+  }
+  &:hover:before
+  {
+    width: 0%;
+    background: $color;
+    transition: width .3s ease;
+  }
+  &:hover:after
+  {
+    width: 0%;
+    background: transparent;
+    transition: width 0s ease;
+  }
+}
+
+@mixin disable-underline-animation() {
+  &:before
+  {
+    height: 0 !important;
+  }
+  &:after
+  {
+    height: 0 !important;
+  }
+}
+
+@mixin disable-list-style-marker() {
+  li
+  {
+    &:before
+    {
+      content: '';
+    }
+  }
+}
+

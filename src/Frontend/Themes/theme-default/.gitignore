@@ -1,0 +1,11 @@
+.smbdelete*
+.project
+.cache
+.buildpath
+.settings
+.*.swp
+.DS_Store
+/Core/Layout/.sass-cache/*
+/Core/Layout/css/*
+/Core/Js/build/*
+

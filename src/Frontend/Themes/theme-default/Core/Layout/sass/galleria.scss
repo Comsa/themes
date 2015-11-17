@@ -1,0 +1,17 @@
+@import "mixins";
+
+/*** GALLERIA ***/
+ul.galleria-overview
+{
+  h3
+  {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  p
+  {
+    margin: 0;
+  }
+}
+
+/*** END GALLERIA ***/

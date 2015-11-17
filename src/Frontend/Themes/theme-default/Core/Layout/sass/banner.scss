@@ -1,0 +1,143 @@
+@import "mixins";
+
+/*** BANNERS ***/
+ul.banners
+{
+  overflow: hidden;
+  margin-bottom: 0;
+  li
+  {
+    display: none;
+    position: relative;
+    div.text
+    {
+      position: absolute;
+      margin: 10px 0 0 50px;
+      h4
+      {
+        @include font-custom-text();
+        color: #000000;
+        font-size: 60px;
+        width: 50%;
+      }
+      p
+      {
+        font-size: 30px;
+      }
+      img
+      {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  li:first-child
+  {
+    display: block;
+  }
+}
+
+div.banners-small-container
+{
+  @include box-shadow(inset 0px 5px 10px 0px rgba(102, 102, 102, 1));
+  background-color: $gray;
+  margin-top: 5px;
+  padding: 5px 0 5px;
+  ul.banners-small
+  {
+    @include nav-layout-horizontal(10px);
+    overflow: hidden;
+    margin: 0 auto;
+    width: 60%;
+    li
+    {
+      width: 32%;
+      a
+      {
+        text-decoration: none;
+        h5
+        {
+          color: $gray-light;
+          display: block;
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+    }
+    li.selected, li:hover
+    {
+      a
+      {
+        text-decoration: none;
+        h5
+        {
+          color: #FFFFFF;
+        }
+      }
+    }
+
+  }
+}
+
+/*** END BANNERS ***/
+
+//Phone
+@media (max-width: $screen-xs-max) {
+
+  ul.banners
+  {
+    li
+    {
+
+      div.text
+      {
+        margin-left: 10px;
+        position: static;
+        h4
+        {
+          font-size: 30px;
+          width: 100%;
+        }
+        p
+        {
+          display: none;
+        }
+      }
+    }
+  }
+  div.banners-small-container
+  {
+    ul.banners-small
+    {
+      width: 90%;
+      li
+      {
+        width: 30%;
+      }
+    }
+  }
+
+}
+
+//small tablets
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+
+  div.banners-small-container
+  {
+    ul.banners-small
+    {
+      width: 80%;
+    }
+  }
+}
+
+//tablets + small desktop
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+  div.banners-small-container
+  {
+    ul.banners-small
+    {
+      width: 70%;
+    }
+  }
+}
